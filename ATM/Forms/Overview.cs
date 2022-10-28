@@ -103,36 +103,37 @@ namespace ATM
         private void btnAmountOK_Click(object sender, EventArgs e)
         {
             try { 
+                //convert the string entry to decimal, round the decimal amount, format the resulting string
+                
                 decimal amount = Convert.ToDecimal(txtAmount.Text);
                 amount = Math.Round(amount, 0);
                 string amountString = amount.ToString("F2");
 
-                if (checking == true){
+                if (checking == true){ //deposit to checking
                     if (deposit == true) {
-                        customer.depositTocheckings(amountString);
+                        customer.depositToChecking(amountString);
                     }
-                    else { 
-                        //withdraw from checkings
+                    else { //withdraw from checkings
+                        customer.withdrawFromChecking(amountString);
                     }
                 }
                 else if (savings == true)
                 {
                     if (deposit == true)
-                    {
-                        //deposit to savings
+                    {   //deposit to savings
+                        customer.depositToSavings(amountString);
                     }
-                    else
-                    {
-                        //withdraw from safvings
+                    else{ //withdraw from savings
+                        customer.withdrawFromSavings(amountString);
                     }
                 }
                 else if (transferToChecking)
-                {
-                    //transfer from checkings to savings
+                {   //transfer from checkings to savings
+                    customer.transferToCheckings(amountString);
                 }
                 else if (transferToSavings)
-                {
-                    //transfer from savings to checkings
+                {   //transfer from savings to checkings
+                    customer.transferToSavings(amountString);
                 }
 
                 //display customer bank records using customer object
