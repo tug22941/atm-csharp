@@ -14,6 +14,7 @@ namespace ATM
     {
         string record;                                  //declare string variable to hold customer record
         customerClass customer;                         //create customer object using customer record
+        ATMBankClass atm = new ATMBankClass();
 
         bool checking = false;
         bool savings = false;
@@ -137,6 +138,8 @@ namespace ATM
                 }
 
                 //display customer bank records using customer object
+                atm.writeOut(record);
+                atm.copyRemainingRecords();
                 lblCheckingBal.Text = customer.AccountChecking;
                 lblSavingBalance.Text = customer.AccountSavings;
                 txtAmount.Clear();
