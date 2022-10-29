@@ -138,8 +138,8 @@ namespace ATM
                 }
 
                 //display customer bank records using customer object
-                atm.writeOut(record);
-                atm.copyRemainingRecords();
+                //atm.writeOut(record);
+                //atm.copyRemainingRecords();
                 lblCheckingBal.Text = customer.AccountChecking;
                 lblSavingBalance.Text = customer.AccountSavings;
                 txtAmount.Clear();

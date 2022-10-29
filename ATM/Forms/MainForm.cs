@@ -26,6 +26,7 @@ namespace ATM
         //event handler responsible for validating and searching, for the user entered account
         //pin number from within the ATM bank records and, if found, retrieving the accont
         private void btnSrchAcc_Click(object sender, EventArgs e)
+        
         {
             //retrieve user input from textbox
             string accPinString = txtAccPin.Text;

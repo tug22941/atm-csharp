@@ -63,10 +63,12 @@ namespace ATM
                         customerClass customer = new customerClass(record);
                         if (customer.nameLoginValid(userName, userPin))
                         {
-                            MessageBox.Show("Username and Pin successful, logging into account", "Invalid Username and Pin");
+                            atm.closeFiles();
+                            MessageBox.Show("Username and Pin successful, logging into account", "Valid Username and Pin");
                             this.Hide();
                             Form frmOverview = new frmOverview(record);
                             frmOverview.ShowDialog();
+
 
                         }
                         else
