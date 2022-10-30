@@ -55,6 +55,7 @@ namespace ATM
         {
             get { return hiddenWDAmount; }
         }
+
         ///////////////METHODS///////////////
 
         //method responsible for determining whether there is a customer record matching the user account Pin
@@ -121,6 +122,7 @@ namespace ATM
                 updatedFile.writeNextRecord(nextRecord);
                 nextRecord = currentFile.getNextRecord(ref isEndOfFile);
             }
+            updatedFile.dipsoseFile();
 
             //end of records message
             MessageBox.Show("End of program execution." + "\n"

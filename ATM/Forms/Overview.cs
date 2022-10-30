@@ -144,6 +144,11 @@ namespace ATM
                 lblSavingBalance.Text = customer.AccountSavings;
                 txtAmount.Clear();
 
+                record = customer.AccountString;
+                atm.writeOut(record);
+                atm.copyRemainingRecords();
+
+
 
             }
             catch {  MessageBox.Show("amount conversion failed"); }

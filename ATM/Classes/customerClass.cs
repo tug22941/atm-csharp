@@ -41,6 +41,11 @@ namespace ATM
 
         ///////////////PROPERTIES///////////////
         
+        //property responsible for retrieving entire customer record;
+        public string AccountString
+        {
+            get { return accountString; }
+        }
         //property responsible for retrieving the cash amount in the customer's checking account
         public string AccountChecking
         {
@@ -52,6 +57,13 @@ namespace ATM
         {
             get { return accountSavings; }
         }
+
+        //property responsible for retrieving the account pin of the customer's record
+        public string AccountPin
+        {
+            get { return accountPin; }
+        }
+
 
         ///////////////METHODS///////////////
 

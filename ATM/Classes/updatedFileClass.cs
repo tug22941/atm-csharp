@@ -22,11 +22,11 @@ namespace ATM
             updatedFilePath = filePath;
             try
             {
-                updatedFileSW = new StreamWriter(filePath);
+                updatedFileSW = new StreamWriter(filePath, true);
             }
             catch
             {
-                MessageBox.Show("Cannot open file" + updatedFilePath + "Terminate Program.",
+                MessageBox.Show("Cannot open file" + updatedFilePath + " \n Terminate Program.",
                             "Output File Connection Error.",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -46,7 +46,7 @@ namespace ATM
         public void writeNextRecord(string nextRecord)
         {
             //write record line using the streamreader, iterate records written count
-            updatedFileSW.WriteLine();
+            updatedFileSW.WriteLine(nextRecord);
             recordsWrittenCount++;
         }
 
@@ -65,6 +65,11 @@ namespace ATM
             updatedFileSW = new StreamWriter(updatedFilePath);
             updatedFileSW.Dispose();
             updatedFileSW.BaseStream.Seek(0, SeekOrigin.Begin);
+        }
+
+        public void dipsoseFile()
+        {
+            updatedFileSW.Dispose();
         }
     }
 }
