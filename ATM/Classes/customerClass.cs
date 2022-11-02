@@ -46,6 +46,13 @@ namespace ATM
         {
             get { return accountString; }
         }
+
+        //property responsible for retrieving the account pin of the customer's record
+        public string AccountPin
+        {
+            get { return accountPin; }
+        }
+
         //property responsible for retrieving the cash amount in the customer's checking account
         public string AccountChecking
         {
@@ -56,12 +63,6 @@ namespace ATM
         public string AccountSavings
         {
             get { return accountSavings; }
-        }
-
-        //property responsible for retrieving the account pin of the customer's record
-        public string AccountPin
-        {
-            get { return accountPin; }
         }
 
 
@@ -106,6 +107,7 @@ namespace ATM
 
             //update the checking account record with the string total w/ dollar sign and commas
             accountChecking = String.Format("{0:n0}", checkingTotal).Insert(0,"$");
+            reconstructRecord();
         }
 
         //method responsible for withdrawing amount from checking account
@@ -124,6 +126,7 @@ namespace ATM
                 double checkingTotal = checkingAmount - withdrawAmount;
                 //update the checkings account record with the string total w/ dollar sign and commas
                 accountChecking = String.Format("{0:n0}", checkingTotal).Insert(0, "$");
+                reconstructRecord();
             }
             else { MessageBox.Show("The withdraw amount is larger than the account total.", "Insufficient Funds"); }
 
@@ -143,6 +146,7 @@ namespace ATM
 
             //update the savings account record with the string total w/ dollar sign and commas
             accountSavings = String.Format("{0:n0}", savingsTotal).Insert(0, "$");
+            reconstructRecord();
         }
 
         //method responsible for withdrawing amount from savings account
@@ -161,6 +165,7 @@ namespace ATM
                 double savingsTotal = savingsAmount - withdrawAmount;
                 //update the savings account record with the string total w/ dollar sign and commas
                 accountSavings = String.Format("{0:n0}", savingsTotal).Insert(0, "$");
+                reconstructRecord();
             }
             else
             {
@@ -189,6 +194,7 @@ namespace ATM
                 double checkingTotal = checkingAmount + transferAmount;
                 accountSavings = String.Format("{0:n0}", savingsTotal).Insert(0, "$");
                 accountChecking = String.Format("{0:n0}", checkingTotal).Insert(0, "$");
+                reconstructRecord();
             }
             else
             {
@@ -218,12 +224,23 @@ namespace ATM
                 double checkingTotal = checkingAmount - transferAmount;
                 accountSavings = String.Format("{0:n0}", savingsTotal).Insert(0, "$");
                 accountChecking = String.Format("{0:n0}", checkingTotal).Insert(0, "$");
+                reconstructRecord();
             }
             else
             {
                 MessageBox.Show("Invalid Transfer! \n" +
                                 "The transfer amount is larger than the checking account total.", "Insufficient Checking Funds");
             }
+        }
+
+        //method responsible for reconstructing customer's account string
+        public void reconstructRecord()
+        {
+            accountString = accountPin + " * ";
+            accountString += accountName + " * ";
+            accountString += accountID + " * ";
+            accountString += accountChecking + " * ";
+            accountString += accountSavings;
         }
     }
 }

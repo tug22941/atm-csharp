@@ -101,7 +101,7 @@ namespace ATM
             this.btnAmountOK.Location = new System.Drawing.Point(523, 407);
             this.btnAmountOK.Name = "btnAmountOK";
             this.btnAmountOK.Size = new System.Drawing.Size(103, 34);
-            this.btnAmountOK.TabIndex = 19;
+            this.btnAmountOK.TabIndex = 7;
             this.btnAmountOK.Text = "OK";
             this.btnAmountOK.UseVisualStyleBackColor = false;
             this.btnAmountOK.Visible = false;
@@ -112,7 +112,7 @@ namespace ATM
             this.txtAmount.Location = new System.Drawing.Point(199, 415);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(273, 20);
-            this.txtAmount.TabIndex = 5;
+            this.txtAmount.TabIndex = 6;
             this.txtAmount.Visible = false;
             // 
             // btnTransSavToChck
@@ -121,7 +121,7 @@ namespace ATM
             this.btnTransSavToChck.Location = new System.Drawing.Point(405, 309);
             this.btnTransSavToChck.Name = "btnTransSavToChck";
             this.btnTransSavToChck.Size = new System.Drawing.Size(252, 35);
-            this.btnTransSavToChck.TabIndex = 3;
+            this.btnTransSavToChck.TabIndex = 5;
             this.btnTransSavToChck.Text = "Transfer Savings-Checking";
             this.btnTransSavToChck.UseVisualStyleBackColor = false;
             this.btnTransSavToChck.Click += new System.EventHandler(this.btnTransSavToChck_Click);
@@ -132,7 +132,7 @@ namespace ATM
             this.btnTransChckToSav.Location = new System.Drawing.Point(150, 309);
             this.btnTransChckToSav.Name = "btnTransChckToSav";
             this.btnTransChckToSav.Size = new System.Drawing.Size(252, 35);
-            this.btnTransChckToSav.TabIndex = 2;
+            this.btnTransChckToSav.TabIndex = 4;
             this.btnTransChckToSav.Text = "Transfer Checking-Savings";
             this.btnTransChckToSav.UseVisualStyleBackColor = false;
             this.btnTransChckToSav.Click += new System.EventHandler(this.btnTransChckToSav_Click);
@@ -176,7 +176,7 @@ namespace ATM
             this.btnDeposit.Location = new System.Drawing.Point(290, 242);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(103, 34);
-            this.btnDeposit.TabIndex = 25;
+            this.btnDeposit.TabIndex = 2;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = false;
             this.btnDeposit.Visible = false;
@@ -188,7 +188,7 @@ namespace ATM
             this.btnWithdraw.Location = new System.Drawing.Point(415, 242);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(103, 34);
-            this.btnWithdraw.TabIndex = 26;
+            this.btnWithdraw.TabIndex = 3;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = false;
             this.btnWithdraw.Visible = false;

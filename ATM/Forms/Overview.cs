@@ -145,8 +145,7 @@ namespace ATM
                 txtAmount.Clear();
 
                 record = customer.AccountString;
-                atm.writeOut(record);
-                atm.copyRemainingRecords();
+                atm.copyRecords(customer);
 
 
 

@@ -99,35 +99,42 @@ namespace ATM
                 {
                     //add the current record to the updated file
                     //update the value of next record to the following record in the current file
-                    updatedFile.writeNextRecord(nextRecord);
                     nextRecord = currentFile.getNextRecord(ref isEndOfFile);
                 }
             }
             return nextRecord;
         }
 
-        //method responsible for writing a single customer record to the updated file
-        public void writeOut(string record)
-        {
-            updatedFile.writeNextRecord(record);
-        }
-
         //method responsible for copying the remaining customer records fromt he current file to the updated file
-        public void copyRemainingRecords()
+        public void copyRecords(customerClass customer)
         {
+
             bool isEndOfFile = false;
             string nextRecord = currentFile.getNextRecord(ref isEndOfFile);
             while (!isEndOfFile)
             {
-                updatedFile.writeNextRecord(nextRecord);
-                nextRecord = currentFile.getNextRecord(ref isEndOfFile);
+                if (nextRecord.Contains(customer.AccountPin)) {
+                    updatedFile.writeNextRecord(customer.AccountString);
+                    nextRecord = currentFile.getNextRecord(ref isEndOfFile);
+                }
+                else
+                {
+                    updatedFile.writeNextRecord(nextRecord);
+                    nextRecord = currentFile.getNextRecord(ref isEndOfFile);
+                }
             }
-            updatedFile.dipsoseFile();
 
             //end of records message
             MessageBox.Show("End of program execution." + "\n"
                 + "The number of records read is: " + currentFile.RecordsReadCount.ToString() + "\n"
                 + "The number of records written is: " + updatedFile.RecordsWrittenCount.ToString());
+
+            updatedFile.dipsoseFile();
+            updatedFile = new updatedFileClass(updateFilePath);
+            updatedFile.writeNextRecord("");
+            currentFile.rewindfile();
+
+
         }
 
         //method responsible for rewinding the current and updated file to their state before modifications

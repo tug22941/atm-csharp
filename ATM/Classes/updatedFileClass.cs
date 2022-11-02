@@ -47,7 +47,7 @@ namespace ATM
         {
             //write record line using the streamreader, iterate records written count
             updatedFileSW.WriteLine(nextRecord);
-            recordsWrittenCount++;
+            if(nextRecord != "") { recordsWrittenCount++; }
         }
 
         //method responsible for closing the updated file stream writer object and stream
@@ -62,8 +62,8 @@ namespace ATM
         {
             recordsWrittenCount = 0;
             //create new stream writer, release buffered data in stream writer, reset the origin of the base stream
-            updatedFileSW = new StreamWriter(updatedFilePath);
             updatedFileSW.Dispose();
+            updatedFileSW = new StreamWriter(updatedFilePath);
             updatedFileSW.BaseStream.Seek(0, SeekOrigin.Begin);
         }
 
