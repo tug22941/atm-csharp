@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace ATM
 {
+    //meaning less edit **delete later**
     public partial class frmOverview : Form
     {
         string record;                                  //declare string variable to hold customer record
