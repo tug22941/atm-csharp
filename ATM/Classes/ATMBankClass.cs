@@ -17,8 +17,8 @@ namespace ATM
         private decimal hiddenWDAmount = 300.00m;
 
         //delcare and define the paths to the current and updated ATM records files
-        private static string currentFilePath = @"CurrentATMBankFile.txt";
-        private static string updateFilePath = @"UpdatedATMBankFile.txt";
+        private static string currentFilePath = AppDomain.CurrentDomain.BaseDirectory + "CurrentATMBankFile.txt";
+        private static string updateFilePath = AppDomain.CurrentDomain.BaseDirectory + "UpdatedATMBankFile.txt";
 
         //create object of the current file class and updated file class
         private currentFileClass currentFile = new currentFileClass(currentFilePath);
