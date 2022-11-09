@@ -20,11 +20,9 @@ namespace ATM
             recordsReadCount = 0;
             currentFilePath = filePath;
 
-            string folder = AppDomain.CurrentDomain.BaseDirectory;
-            string temp = folder + "CurrentATMBankFile.txt";
             //attempt to read the current file path using the stream reader object
             try { 
-                currentFileSR = new StreamReader(temp); 
+                currentFileSR = new StreamReader(currentFilePath); 
             }
             catch {
                 MessageBox.Show("Cannot open file" + currentFilePath + "Terminate Program.",

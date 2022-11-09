@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ATM
 {
@@ -17,8 +18,10 @@ namespace ATM
         private decimal hiddenWDAmount = 300.00m;
 
         //delcare and define the paths to the current and updated ATM records files
-        private static string currentFilePath = AppDomain.CurrentDomain.BaseDirectory + "CurrentATMBankFile.txt";
-        private static string updateFilePath = AppDomain.CurrentDomain.BaseDirectory + "UpdatedATMBankFile.txt";
+        static string debug = Environment.CurrentDirectory;
+        static string bin = Directory.GetParent(debug).Parent.FullName;
+        private static string currentFilePath = bin + @"\Resources\CurrentATMBankFile.txt";
+        private static string updateFilePath = bin + @"\Resources\UpdatedATMBankFile.txt";
 
         //create object of the current file class and updated file class
         private currentFileClass currentFile = new currentFileClass(currentFilePath);
