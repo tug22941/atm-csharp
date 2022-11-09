@@ -18,8 +18,8 @@ namespace ATM
         private decimal hiddenWDAmount = 300.00m;
 
         //delcare and define the paths to the current and updated ATM records files
-        static string debugDir= Environment.CurrentDirectory;
-        static string atmDir = Directory.GetParent(debugDir).Parent.FullName;
+        private static string debugDir= Environment.CurrentDirectory;
+        private static string atmDir = Directory.GetParent(debugDir).Parent.FullName;
         private static string currentFilePath = atmDir + @"\Resources\CurrentATMBankFile.txt";
         private static string updateFilePath = atmDir + @"\Resources\UpdatedATMBankFile.txt";
 
